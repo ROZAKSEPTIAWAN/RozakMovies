@@ -4,8 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/activity_adventure_detail.xml" value="0.1890625" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/activity_home_detail.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/activity_horror_detail.xml" value="0.20051282051282052" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/activity_iseng.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/activity_main.xml" value="0.22991347342398022" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/activity_order.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/activity_science.xml" value="0.1890625" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/activity_splashscreen.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/card_captioned_image.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/RozakMovies/app/src/main/res/layout/fragment_adventure.xml" value="0.18518518518518517" />

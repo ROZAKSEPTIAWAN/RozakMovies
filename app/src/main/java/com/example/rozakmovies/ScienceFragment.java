@@ -1,5 +1,6 @@
 package com.example.rozakmovies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -33,6 +34,15 @@ public class ScienceFragment extends Fragment {
         scienceRecycler.setAdapter(adapter);
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         scienceRecycler.setLayoutManager(layoutManager);
+
+        adapter.setListener(new CaptionedImagesAdapter.Listener() {
+            public void onClick(int position) {
+                Intent intent = new Intent(getActivity(), ScienceDetail.class);
+                intent.putExtra(ScienceDetail.EXTRA_SCIENCE_ID, position);
+                intent.putExtra(ScienceDetail.EXTRA_SCIENCE_DETAIL, position);
+                getActivity().startActivity(intent);
+            }
+        });
         return scienceRecycler;
 
     }

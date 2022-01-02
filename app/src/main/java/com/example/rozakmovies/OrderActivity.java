@@ -22,9 +22,6 @@ public class OrderActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-
-
     }
 
     public void onClickDone(View view) {

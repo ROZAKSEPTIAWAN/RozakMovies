@@ -1,10 +1,12 @@
 package com.example.rozakmovies;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,6 +26,16 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
         this.imageIds = imageIds;
     }
 
+    public void setListener(Listener listener){
+        this.listener = listener;
+    }
+
+
+    private Listener listener;
+    interface Listener {
+        void onClick(int position);
+    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         //Define the view to be used for each data item
@@ -35,6 +47,7 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
             cardView = v;
         }
     }
+
     @Override
     public CaptionedImagesAdapter.ViewHolder onCreateViewHolder(
             ViewGroup parent, int viewType){
@@ -44,7 +57,7 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position){
+    public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position){
         CardView cardView = holder.cardView;
         ImageView imageView = (ImageView)cardView.findViewById(R.id.info_image);
         Drawable drawable =
@@ -53,5 +66,15 @@ public class CaptionedImagesAdapter extends RecyclerView.Adapter<CaptionedImages
         imageView.setContentDescription(captions[position]);
         TextView textView = (TextView)cardView.findViewById(R.id.info_text);
         textView.setText(captions[position]);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onClick(position);
+                }
+            }
+        });
+
     }
 }

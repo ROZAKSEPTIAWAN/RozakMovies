@@ -1,5 +1,6 @@
 package com.example.rozakmovies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 
 
 public class AdventureFragment extends Fragment {
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +35,16 @@ public class AdventureFragment extends Fragment {
         adventureRecycler.setAdapter(adapter);
     GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 2);
         adventureRecycler.setLayoutManager(layoutManager);
+
+        adapter.setListener(new CaptionedImagesAdapter.Listener() {
+            public void onClick(int position) {
+                Intent intent = new Intent(getActivity(), AdventureDetail.class);
+                intent.putExtra(AdventureDetail.EXTRA_ADVENTURE_ID, position);
+                intent.putExtra(AdventureDetail.EXTRA_ADVENTURE_DETAIL, position);
+                getActivity().startActivity(intent);
+            }
+        });
+
         return adventureRecycler;
     }
 }
